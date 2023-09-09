@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Slackメッセージフィルター",
+  "version": "1.0",
+  "description": "Slackで特定の人を非表示にします",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "file://*/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "deleteuser.txt"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.slack.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
